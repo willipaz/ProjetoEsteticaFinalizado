@@ -2,28 +2,37 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(234, 233, 233);
-    color: black;
-}
 
-/* Background image for servicos.html page */
-body.servicos-background {
-    /* Remove background image from body */
-    background-image: none;
-    color: white; /* Ensure text is readable */
-}
-
-#portfolio {
-    background-image: url('2022.jpg');
+    /* Imagem de fundo */
+    background-image: url('./2024.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: black; /* keep black background behind image */
-    margin: 1rem 0;
-    padding: 2rem;
-    color: white; /* text color for readability */
+    background-attachment: fixed;
+
+    color: white;
 }
 
+/* Fundo da página de serviços */
+body.servicos-background {
+    background-image: url('./2024.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+#portfolio {
+    background-image: url('./2024.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin: 1rem 0;
+    padding: 2rem;
+    color: white;
+}
 
 header {
     background-color: red;
@@ -62,7 +71,9 @@ label {
     margin-top: 1rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     padding: 0.5rem;
     margin-top: 0.5rem;
     border: 1px solid #ccc;
@@ -92,7 +103,8 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid #878c8d;
@@ -100,6 +112,7 @@ th, td {
 
 th {
     background-color: #f7f8f9;
+    color: black;
 }
 
 footer {
