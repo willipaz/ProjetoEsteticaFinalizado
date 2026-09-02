@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agendamento - Estética Automotiva</title>
+
+    <link rel="stylesheet" href="agendamento.css" />
+</head>
+<body>
+    <header>
+        <h1>
+            WCAR
+        </h1>
+        <h2>Estética Automotiva</h2>
+        <p>Transforme seu veículo com nossos serviços de alta qualidade.</p>
+        <nav>
+            <button onclick="window.location.href='index.html#quem-somos'">Quem Somos</button>
+            <button onclick="window.location.href='servicos.html'">Serviços</button>
+            <button onclick="window.location.href='agendamento.html'">Agendamentos</button>
+            <button onclick="window.location.href='contato.html'">Contato</button>
+            <button onclick="window.location.href='localizacao.html'">Localização</button>
+        </nav>
+    </header>
+
+    <section id="agendamento">
+        <h2>Agendamento</h2>
+        <form id="appointment-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <label>Serviços:</label>
+            <div class="services-container">
+                <div class="service-item">
+                    <input type="checkbox" id="lavagem-tecnica" name="services" value="lavagem-tecnica" />
+                    <label for="lavagem-tecnica">Lavagem Técnica <span class="price">R$ 140,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="polimento-tecnico-pequeno" name="services" value="polimento-tecnico-pequeno" />
+                    <label for="polimento-tecnico-pequeno">Polimento Técnico - Carro Pequeno <span class="price">R$ 750,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="polimento-tecnico-grande" name="services" value="polimento-tecnico-grande" />
+                    <label for="polimento-tecnico-grande">Polimento Técnico - Carro Grande <span class="price">R$ 880,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="higienizacao-interna-pequeno" name="services" value="higienizacao-interna-pequeno" />
+                    <label for="higienizacao-interna-pequeno">Higienização interna - carro Pequeno <span class="price">R$ 430,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="higienizacao-interna-grande" name="services" value="higienizacao-interna-grande" />
+                    <label for="higienizacao-interna-grande">Higienização interna - carro Grande <span class="price">R$ 530,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="protecao-ceramica-pequeno" name="services" value="protecao-ceramica-pequeno" />
+                    <label for="protecao-ceramica-pequeno">Proteção Cerâmica - Carro Pequeno <span class="price">R$ 1.100,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="protecao-ceramica-grande" name="services" value="protecao-ceramica-grande" />
+                    <label for="protecao-ceramica-grande">Proteção Cerâmica - Carro Grande <span class="price">R$ 1.300,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="lavagem-motor-pequeno" name="services" value="lavagem-motor-pequeno" />
+                    <label for="lavagem-motor-pequeno">Lavagem do motor - Carro Pequeno <span class="price">R$ 140,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="lavagem-motor-grande" name="services" value="lavagem-motor-grande" />
+                    <label for="lavagem-motor-grande">Lavagem do motor - Carro Grande <span class="price">R$ 160,00</span></label>
+                </div>
+                <div class="service-item">
+                    <input type="checkbox" id="revitalizacao-farois" name="services" value="revitalizacao-farois" />
+                    <label for="revitalizacao-farois">Revitalização dos faróis <span class="price">R$ 200,00</span></label>
+                </div>
+            </div>
+
+            <label for="date">Data Preferida:</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Agendar</button>
+        </form>
+    </section>
+
+    <footer id="footer">
+        <p>© 2023 Estética Automotiva. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+
+            // Collect selected services
+            const services = [];
+            const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+            checkboxes.forEach(function(checkbox) {
+                const label = document.querySelector(`label[for="${checkbox.id}"]`);
+                services.push(label.textContent.trim());
+            });
+
+            // Build WhatsApp message
+            let whatsappMessage = `Novo Agendamento:\n\nNome: ${name}\nEmail: ${email}\nTelefone: ${phone}\nData Preferida: ${date}\nMensagem: ${message}\n\nServiços Selecionados:\n`;
+            services.forEach(function(service) {
+                whatsappMessage += `- ${service}\n`;
+            });
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/5511973692168?text=${encodedMessage}`;
+
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>

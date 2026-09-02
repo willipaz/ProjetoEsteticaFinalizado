@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(234, 233, 233);
+    color: black;
+}
+
+/* Background image for servicos.html page */
+body.servicos-background {
+    /* Remove background image from body */
+    background-image: none;
+    color: white; /* Ensure text is readable */
+}
+
+#portfolio {
+    background-image: url('2022.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black; /* keep black background behind image */
+    margin: 1rem 0;
+    padding: 2rem;
+    color: white; /* text color for readability */
+}
+
+
+header {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#agendamento {
+    background-color: #1c6dbe;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+input, select, textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #006439;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #41c415;
+}
+
+#valores {
+    background-color: rgb(206, 7, 7);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #878c8d;
+}
+
+th {
+    background-color: #f7f8f9;
+}
+
+footer {
+    background-color: #840505;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Magneto&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Fotos Projeto/2024.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Magneto', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: white;
+    text-transform: uppercase;
+}
+
+header h1:hover {
+    color: #920000;
+}
+
+header h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+header p {
+    color: white;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #920000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #b00000;
+}
+
+#quem-somos {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+#quem-somos h2 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+#quem-somos p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+#gallery {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#gallery div img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 4px solid black;
+    filter: contrast(150%) saturate(150%);
+    margin: 5px;
+}
+
+#footer {
+    background-color: #920000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #quem-somos {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    nav button {
+        display: block;
+        margin: 0.5rem auto;
+        width: 100%;
+        max-width: 200px;
+    }
+}
