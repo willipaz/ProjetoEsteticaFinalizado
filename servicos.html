@@ -1,167 +1,523 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Serviços - Estética Automotiva</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="servicos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Magneto&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="servicos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Magneto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+            /* IMAGEM DE FUNDO */
+            background-image: url('./2024.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: white;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Magneto', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        header h1:hover {
+            color: #920000;
+        }
+
+        header h2 {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        header p {
+            color: white;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav button {
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #920000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #b00000;
+        }
+
+        #portfolio {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #portfolio h2 {
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-category {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-category h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .service-item {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .service-item h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .service-item p {
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .price {
+            display: block;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #valores {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        #valores h2 {
+            color: white;
+        }
+
+        .valores-container {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #555;
+            text-align: left;
+        }
+
+        th {
+            background-color: #920000;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        #footer {
+            background-color: #920000;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            #portfolio,
+            #valores {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            nav button {
+                display: block;
+                margin: 0.5rem auto;
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-        <h1>
-            WCAR
-        </h1>
-        <h2 style="margin-top: 0.5rem; margin-bottom: 1rem;">Estética Automotiva</h2>
-        <p>Transforme seu veículo com nossos serviços de alta qualidade.</p>
+
+        <h1>WCAR</h1>
+
+        <h2>Estética Automotiva</h2>
+
+        <p>
+            Transforme seu veículo com nossos serviços de alta qualidade.
+        </p>
+
         <nav>
-            <button onclick="window.location.href='index.html#quem-somos'">Quem Somos</button>
-            <button onclick="window.location.href='servicos.html'">Serviços</button>
-            <button onclick="window.location.href='agendamento.html'">Agendamentos</button>
-            <button onclick="window.location.href='contato.html'">Contato</button>
-            <button onclick="window.location.href='localizacao.html'">Localização</button>
+            <button onclick="window.location.href='index.html#quem-somos'">
+                Quem Somos
+            </button>
+
+            <button onclick="window.location.href='servicos.html'">
+                Serviços
+            </button>
+
+            <button onclick="window.location.href='agendamento.html'">
+                Agendamentos
+            </button>
+
+            <button onclick="window.location.href='contato.html'">
+                Contato
+            </button>
+
+            <button onclick="window.location.href='localizacao.html'">
+                Localização
+            </button>
         </nav>
+
     </header>
 
+
     <section id="portfolio">
+
         <h2>Portfólio de Serviços</h2>
+
         <div class="services-grid">
+
             <div class="service-category">
+
                 <h3>Lavagem</h3>
+
                 <div class="service-item">
                     <h4>Lavagem Técnica</h4>
                     <p>Lavagem completa e detalhada do veículo.</p>
                     <span class="price">R$ 140,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Lavagem do Motor - Carro Pequeno</h4>
                     <p>Limpeza especializada do motor.</p>
                     <span class="price">R$ 140,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Lavagem do Motor - Carro Grande</h4>
                     <p>Limpeza especializada do motor.</p>
                     <span class="price">R$ 160,00</span>
                 </div>
+
             </div>
+
+
             <div class="service-category">
+
                 <h3>Polimento</h3>
+
                 <div class="service-item">
                     <h4>Polimento Técnico - Carro Pequeno</h4>
                     <p>Polimento para restaurar o brilho da pintura.</p>
                     <span class="price">R$ 825,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Polimento Técnico - Carro Grande</h4>
                     <p>Polimento para restaurar o brilho da pintura.</p>
                     <span class="price">R$ 968,00</span>
                 </div>
+
             </div>
+
+
             <div class="service-category">
+
                 <h3>Higienização</h3>
+
                 <div class="service-item">
                     <h4>Higienização Interna - Carro Pequeno</h4>
                     <p>Limpeza profunda do interior do veículo.</p>
                     <span class="price">R$ 473,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Higienização Interna - Carro Grande</h4>
                     <p>Limpeza profunda do interior do veículo.</p>
                     <span class="price">R$ 583,00</span>
                 </div>
+
             </div>
+
+
             <div class="service-category">
+
                 <h3>Proteção</h3>
+
                 <div class="service-item">
                     <h4>Proteção Cerâmica - Carro Pequeno</h4>
                     <p>Aplicação de proteção cerâmica para durabilidade.</p>
                     <span class="price">R$ 1.210,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Proteção Cerâmica - Carro Grande</h4>
                     <p>Aplicação de proteção cerâmica para durabilidade.</p>
                     <span class="price">R$ 1.430,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Enceramento - Carro Pequeno</h4>
                     <p>Aplicação de cera para proteção e brilho.</p>
                     <span class="price">R$ 88,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Enceramento - Carro Grande</h4>
                     <p>Aplicação de cera para proteção e brilho.</p>
                     <span class="price">R$ 110,00</span>
                 </div>
+
             </div>
+
+
             <div class="service-category">
+
                 <h3>Revitalização</h3>
+
                 <div class="service-item">
                     <h4>Revitalização dos Faróis</h4>
-                    <p>Restauração completa dos faróis, removendo oxidação e devolvendo transparência.</p>
+                    <p>
+                        Restauração completa dos faróis, removendo oxidação
+                        e devolvendo transparência.
+                    </p>
                     <span class="price">R$ 220,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Revitalização e Vitrificação dos Faróis</h4>
-                    <p>Restauração avançada com vitrificação para proteção duradoura contra desgaste.</p>
+                    <p>
+                        Restauração avançada com vitrificação para proteção
+                        duradoura contra desgaste.
+                    </p>
                     <span class="price">R$ 330,00</span>
                 </div>
+
             </div>
+
+
             <div class="service-category">
+
                 <h3>Manutenção</h3>
+
                 <div class="service-item">
                     <h4>Troca de Óleo e Filtros</h4>
-                    <p>Troca completa de óleo, filtro de óleo e filtro de ar para melhor performance.</p>
+                    <p>
+                        Troca completa de óleo, filtro de óleo e filtro de ar
+                        para melhor performance.
+                    </p>
                     <span class="price">R$ 180,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Alinhamento e Balanceamento</h4>
-                    <p>Ajuste preciso das rodas para segurança e economia de combustível.</p>
+                    <p>
+                        Ajuste preciso das rodas para segurança e economia
+                        de combustível.
+                    </p>
                     <span class="price">R$ 120,00</span>
                 </div>
+
                 <div class="service-item">
                     <h4>Inspeção Geral do Veículo</h4>
-                    <p>Verificação completa de sistemas elétricos, freios e suspensão.</p>
+                    <p>
+                        Verificação completa de sistemas elétricos,
+                        freios e suspensão.
+                    </p>
                     <span class="price">R$ 250,00</span>
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
     <section id="valores">
+
         <h2>Valores</h2>
+
         <div class="valores-container">
+
             <table>
+
                 <thead>
                     <tr>
                         <th>Serviço</th>
                         <th>Preço</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>Lavagem Técnica</td><td>R$ 140,00</td></tr>
-                    <tr><td>Polimento Técnico - Carro Pequeno</td><td>R$ 825,00</td></tr>
-                    <tr><td>Polimento Técnico - Carro Grande</td><td>R$ 968,00</td></tr>
-                    <tr><td>Higienização interna - carro Pequeno</td><td>R$ 473,00</td></tr>
-                    <tr><td>Higienização interna - carro Grande</td><td>R$ 583,00</td></tr>
-                    <tr><td>Proteção Cerâmica - Carro Pequeno</td><td>R$ 1.210,00</td></tr>
-                    <tr><td>Proteção Cerâmica - Carro Grande</td><td>R$ 1.430,00</td></tr>
-                    <tr><td>Lavagem do motor - Carro Pequeno</td><td>R$ 140,00</td></tr>
-                    <tr><td>Lavagem do motor - Carro Grande</td><td>R$ 160,00</td></tr>
-                    <tr><td>Revitalização dos faróis</td><td>R$ 220,00</td></tr>
-                    <tr><td>Revitalização e vitrificação dos faróis</td><td>R$ 330,00</td></tr>
-                    <tr><td>Enceramento - Carro Pequeno</td><td>R$ 88,00</td></tr>
-                    <tr><td>Enceramento - Carro Grande</td><td>R$ 110,00</td></tr>
-                    <tr><td>Troca de Óleo e Filtros</td><td>R$ 180,00</td></tr>
-                    <tr><td>Alinhamento e Balanceamento</td><td>R$ 120,00</td></tr>
-                    <tr><td>Inspeção Geral do Veículo</td><td>R$ 250,00</td></tr>
+
+                    <tr>
+                        <td>Lavagem Técnica</td>
+                        <td>R$ 140,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Polimento Técnico - Carro Pequeno</td>
+                        <td>R$ 825,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Polimento Técnico - Carro Grande</td>
+                        <td>R$ 968,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Higienização interna - carro Pequeno</td>
+                        <td>R$ 473,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Higienização interna - carro Grande</td>
+                        <td>R$ 583,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Proteção Cerâmica - Carro Pequeno</td>
+                        <td>R$ 1.210,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Proteção Cerâmica - Carro Grande</td>
+                        <td>R$ 1.430,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lavagem do motor - Carro Pequeno</td>
+                        <td>R$ 140,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lavagem do motor - Carro Grande</td>
+                        <td>R$ 160,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Revitalização dos faróis</td>
+                        <td>R$ 220,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Revitalização e vitrificação dos faróis</td>
+                        <td>R$ 330,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Enceramento - Carro Pequeno</td>
+                        <td>R$ 88,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Enceramento - Carro Grande</td>
+                        <td>R$ 110,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Troca de Óleo e Filtros</td>
+                        <td>R$ 180,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Alinhamento e Balanceamento</td>
+                        <td>R$ 120,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Inspeção Geral do Veículo</td>
+                        <td>R$ 250,00</td>
+                    </tr>
+
                 </tbody>
+
             </table>
+
         </div>
+
     </section>
 
+
     <footer id="footer">
-        <p>© 2023 Estética Automotiva. Todos os direitos reservados.</p>
+
+        <p>
+            © 2023 Estética Automotiva. Todos os direitos reservados.
+        </p>
+
     </footer>
+
 </body>
+
 </html>
