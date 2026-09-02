@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Magneto&display=swap');
 
 body {
+   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+}
 }
 
 header {
